@@ -1,0 +1,17 @@
+{% extends 'service/base.html' %}
+{% block content %}
+<h2>Список послугів які надають наші майстри</h2>
+<p>Вітаємо вас в нашамо каталозі послуг наших майстрів</p>
+{% for service in object_list %}
+<section>
+    <h2>service.name</h2>
+    <h3>service.category</h3>
+    <p>service.description</p>
+    {% if service.image %}
+    <img src="{{ service.image.url }}" alt="{{ service.name }}" />
+    {% else %}
+        <img src="/static/images/no-image.png" alt="No image available" />
+    {% endif %}
+</section>
+{% endfor %}
+{% endblock %}

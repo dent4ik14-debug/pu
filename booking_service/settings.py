@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/6.1/ref/settings/
 """
 
 from pathlib import Path
-
+import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -27,7 +27,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-
+AUTH_USER_MODEL = 'user.User'
 # Application definition
 
 INSTALLED_APPS = [
@@ -72,6 +72,10 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'booking_service.wsgi.application'
 
+MEDIA_URL = '/media/'
+
+# Абсолютний шлях до папки на диску, де Django зберігатиме завантажені файли
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # Database
 # https://docs.djangoproject.com/en/6.1/ref/settings/#databases

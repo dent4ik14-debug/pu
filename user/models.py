@@ -22,7 +22,7 @@ class MasterProfile(models.Model):
 
 class MasterService(models.Model):
     master = models.ForeignKey(MasterProfile, on_delete=models.CASCADE)
-    service = models.ForeignKey(Service, on_delete=models.CASCADE)
+    service = models.ForeignKey(Service, on_delete=models.CASCADE, related_name='services')
     price = models.DecimalField(max_digits=10, decimal_places=2)
     duration_minutes = models.PositiveIntegerField()
     is_active = models.BooleanField(default=True)
