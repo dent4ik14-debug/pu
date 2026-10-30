@@ -4,7 +4,7 @@
 <p>Вітаємо вас в нашамо каталозі послуг наших майстрів</p>
 {% for service in object_list %}
 <section>
-    <h2>service.name</h2>
+    <a href='{% url "service:service" service.id %}'>service.name</a>
     <h3>service.category</h3>
     <p>service.description</p>
     {% if service.image %}

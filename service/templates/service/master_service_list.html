@@ -1,0 +1,8 @@
+{% extends 'service/base.html' %}
+{% block content %}
+{% for master_service in object_list %}
+<section>
+    <h2>{{ master_service.price }}</h2>
+</section>
+{% endfor %}
+{% endblock %}
